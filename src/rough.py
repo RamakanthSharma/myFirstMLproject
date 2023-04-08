@@ -15,51 +15,63 @@
 
 
 #Creating a class
-class myClass:
-    x=5
+# class myClass:
+#     x=5
 
 # creating an object that belongs to myClass
 
-object1 = myClass()
+# object1 = myClass()
 
-print(object1.x)
+# print(object1.x)
 
-class person:
-    def __init__(self, name, age) -> None:
-        self.name = name
-        self.age = age
+# class person:
+#     def __init__(self, name, age) -> None:
+#         self.name = name
+#         self.age = age
         
-p1 = person("Ramakanth", "28")
+# p1 = person("Ramakanth", "28")
 
 
-print(p1.name)
-print(p1.age)
+# print(p1.name)
+# print(p1.age)
 
-'''
-Create a class named Person, 
-with firstname and lastname properties, and a printname method:
-'''
+# '''
+# Create a class named Person, 
+# with firstname and lastname properties, and a printname method:
+# '''
 
-class Person():
-    def __init__(self, fname, lname) -> None:
-        self.firstname = fname
-        self.lastname = lname
-        pass
+# class Person():
+#     def __init__(self, fname, lname) -> None:
+#         self.firstname = fname
+#         self.lastname = lname
+#         pass
 
-    def printname(self):
-        print(self.firstname, self.lastname)
+#     def printname(self):
+#         print(self.firstname, self.lastname)
 
-p1 = Person("Ramakanth", "Sharma")
+# p1 = Person("Ramakanth", "Sharma")
 
-p1.printname()
+# p1.printname()
 
-class student(Person):
-    pass
+# class student(Person):
+#     pass
 
-s1 = student("Ashish", "Sharma")
-s1.printname()
+# s1 = student("Ashish", "Sharma")
+# s1.printname()
 
 
-e = Exception
+# e = Exception
 
-e.error
+# e.error
+
+from datetime import datetime
+
+x = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
+y=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+print(x)
+print(y)
+
+import os
+
+print(os.getcwd())
+print(os.path.join(os.getcwd(),'logs',y))
