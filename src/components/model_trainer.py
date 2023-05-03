@@ -47,8 +47,53 @@ class ModelTrainer:
                 "Adaboost Regressor": AdaBoostRegressor()
             }
 
+            params = {
+                "Random Forest":{
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'max_features':['sqrt', 'log2', None],
+                    'n_estimators':[8,16,32,64,128,256],
+                },
+                "Decision Tree":{
+                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'max_features': ['sqrt', 'log2'],
+                    'splitter':['best', 'random']
+                },
+                "Gradient Boosting":{
+                    'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
+                    'criterion':['friedman_mse', 'squared_error'],
+                    'max_features':['auto', 'sqrt', 'log2'],
+                    'learning_rate':[0.1, 0.05, 0.01, 0.001],
+                    'subsample':[0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 1.0],
+                    'n_estimators':[100, 150, 200, 250, 300, 500]
+                },
+                "Linear Regression":{
+                    'fit_intercept':['True', 'False'],
+                    'positive':['True', 'False']
+                },
+                "K-Neighbors Regressor":{
+                    'n_neighbors':[5, 10, 15, 20, 25, 50, 100],
+                    'weights':['uniform', 'distance'],
+                    'algorithm':['auto', 'ball_tree', 'kd_tree', 'brute'],
+                    'leaf_size':[30, 50, 100],
+                },
+                "XGB Regressor":{
+                    'n_estinators':[100, 500, 1000, 2000],
+                    'max_depth':[2,5,10,15],
+                    'subsample':[0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 1.0]
+                },
+                "CatBoosting Regressor":{
+                    'depth':[6,8,10],
+                    'learning_rate':[0.01, 0.05, 0.1],
+                    'iterations':[30, 50, 100]
+                },
+                "Adaboost Regressor":{
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'n_estimators': [100, 150, 200, 250, 300, 500]
+                }
+            }
+
             model_report:dict=evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test,
-                                              y_test=y_test, models=models)
+                                              y_test=y_test, models=models, params=params)
 
             best_model_score = max(sorted(model_report.values()))
             best_model_name = list(model_report.keys())[list(model_report.values()).index(
