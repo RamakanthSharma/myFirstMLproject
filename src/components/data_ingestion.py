@@ -25,7 +25,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method")
         try:
-            df=pd.read_csv(r"E:\Personal Projects\firstMLproject\notebook\data\stud.csv")
+            df=pd.read_csv(r"..\firstMLproject\notebook\data\stud.csv")
             logging.info("Input data is converted to DataFrame")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
