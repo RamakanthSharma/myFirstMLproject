@@ -61,7 +61,7 @@ class ModelTrainer:
                 "Gradient Boosting":{
                     'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
                     'criterion':['friedman_mse', 'squared_error'],
-                    'max_features':['auto', 'sqrt', 'log2'],
+                    'max_features':['sqrt', 'log2'],
                     'learning_rate':[0.1, 0.05, 0.01, 0.001],
                     'subsample':[0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 1.0],
                     'n_estimators':[100, 150, 200, 250, 300, 500]
