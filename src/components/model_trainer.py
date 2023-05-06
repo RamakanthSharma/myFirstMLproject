@@ -67,8 +67,8 @@ class ModelTrainer:
                     'n_estimators':[100, 150, 200, 250, 300, 500]
                 },
                 "Linear Regression":{
-                    'fit_intercept':['True', 'False'],
-                    'positive':['True', 'False']
+                    'fit_intercept':[True, False],
+                    'positive':[True, False]
                 },
                 "K-Neighbors Regressor":{
                     'n_neighbors':[5, 10, 15, 20, 25, 50, 100],
