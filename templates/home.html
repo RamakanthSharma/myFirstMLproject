@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Race or Ethnicity</label>
-            <select class="form-control" name="ethnicity" placeholder="Enter your ethnicity" required>
+            <select class="form-control" name="race_ethnicity" placeholder="Enter your ethnicity" required>
                 <option class="placeholder" selected disabled value="">Select your ethnicity</option>
                 <option value="group A">Group A</option>
                 <option value="group B">Group B</option>
@@ -54,7 +54,23 @@
                 <option value="completed">Completed</option>
             </select>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Writing score (Out of 100)</label>
+            <input class="form-control" type="number" name="writing_score"
+                    placeholder="Enter your writing score" min="0" max="100" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Reading score (Out of 100)</label>
+            <input class="form-control" type="number" name="reading_score"
+            placeholder="Enter your reading score" min="0" max="100" />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Maths Score" required />
+        </div>
     </form>
+    <h2>
+        The predicted Maths score is {{result}}
+    </h2>
 </div>
 </body>
 </html>
