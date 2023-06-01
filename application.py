@@ -4,7 +4,9 @@ import pandas as pd
 
 from src.pipelines.predict_pipeline import customData, predictPipeline
 
-app=Flask(__name__)
+application=Flask(__name__)
+
+app = application
 
 #Route for home page
 @app.route('/')
@@ -35,4 +37,4 @@ def predict_data():
 
 
 if __name__=="__main__":
-    app.run()
+    app.run(host="0.0.0.0")
